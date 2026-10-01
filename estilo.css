@@ -1,0 +1,834 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================
+   PÁGINA PRINCIPAL
+======================================== */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 20%,
+        #263b72 0%,
+        #080d1c 45%,
+        #020307 100%);
+}
+
+
+/* ESTRELLAS */
+
+.inicio::before {
+    content: "";
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#6fcfff 1px, transparent 1px);
+
+    background-size: 70px 70px, 110px 110px;
+
+    opacity: 0.4;
+
+    pointer-events: none;
+}
+
+
+/* PORTADA */
+
+.portada {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px;
+}
+
+
+/* TÍTULO */
+
+.portada h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 8vw, 75px);
+
+    color: #9edcff;
+
+    text-shadow:
+        0 0 10px #36b9ff,
+        0 0 25px #168cff,
+        0 0 45px #006eff;
+
+    margin-bottom: 15px;
+}
+
+
+/* SUBTÍTULO */
+
+.portada p {
+    font-size: 22px;
+
+    color: #ffffff;
+
+    letter-spacing: 2px;
+}
+
+
+/* CARRO GRANDE */
+
+.carrito-grande {
+    font-size: 120px;
+
+    margin: 35px 0;
+
+    filter:
+        drop-shadow(0 0 15px #ff4500);
+
+    animation: saltar 2s infinite;
+}
+
+
+@keyframes saltar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* BOTÓN */
+
+.boton-arrancar {
+
+    display: inline-block;
+
+    padding: 18px 45px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(45deg,
+        #ff0000,
+        #ff7300);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 0 15px #ff4500,
+        0 0 30px #ff0000;
+
+    transition: 0.3s;
+}
+
+
+.boton-arrancar:hover {
+
+    transform: scale(1.12);
+
+    background:
+        linear-gradient(45deg,
+        #ff7300,
+        #ffd000);
+
+    box-shadow:
+        0 0 25px #ffcc00,
+        0 0 50px #ff6600;
+}
+
+/* =========================================
+   PÁGINA DEL RAMO DE TULIPANES
+========================================= */
+
+.pagina-flores {
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+    position: relative;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #173c70 0%,
+            #071426 45%,
+            #010309 100%
+        );
+}
+
+
+/* =========================================
+   ESTRELLAS
+========================================= */
+
+.pagina-flores::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#6ed7ff 1px, transparent 1px);
+
+    background-size:
+        65px 65px,
+        110px 110px;
+
+    opacity: .45;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   LUNA
+========================================= */
+
+.pagina-flores .luna {
+
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    right: 10%;
+    top: 10%;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 45px #6acbff;
+
+}
+
+
+/* =========================================
+   TITULO
+========================================= */
+
+.titulo-flores {
+
+    position: relative;
+
+    z-index: 20;
+
+    text-align: center;
+
+    padding-top: 35px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.titulo-flores h1 {
+
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 7vw, 65px);
+
+    color: #a7e4ff;
+
+    text-shadow:
+        0 0 10px #38bfff,
+        0 0 25px #178cff,
+        0 0 45px #006cff;
+
+}
+
+
+.titulo-flores p {
+
+    font-size: 19px;
+
+    color: #e8f9ff;
+
+}
+
+
+/* =========================================
+   CARROS
+========================================= */
+
+.pagina-flores .carro {
+
+    position: absolute;
+
+    z-index: 30;
+
+    font-size: 55px;
+
+    left: -150px;
+
+    animation:
+        carrera 7s linear infinite;
+
+}
+
+
+.pagina-flores .carro-1 {
+
+    top: 35%;
+
+}
+
+
+.pagina-flores .carro-2 {
+
+    top: 53%;
+
+    animation-delay: 3s;
+
+}
+
+
+@keyframes carrera {
+
+    from {
+        left: -150px;
+    }
+
+    to {
+        left: 110%;
+    }
+
+}
+
+
+/* =========================================
+   RAMO
+========================================= */
+
+.ramo {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    bottom: 20px;
+
+    width: 500px;
+
+    height: 430px;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* =========================================
+   TULIPANES
+========================================= */
+
+.tulipan {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 300px;
+
+    transform-origin: bottom center;
+
+    animation:
+        movimiento-tulipan 4s ease-in-out infinite;
+
+}
+
+
+/* POSICIONES */
+
+.tulipan-1 {
+
+    left: 50px;
+    bottom: 20px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+.tulipan-2 {
+
+    left: 130px;
+    bottom: 60px;
+
+    transform: rotate(-8deg);
+
+    animation-delay: .5s;
+
+}
+
+
+.tulipan-3 {
+
+    left: 205px;
+    bottom: 100px;
+
+    transform: rotate(0deg);
+
+    animation-delay: 1s;
+
+}
+
+
+.tulipan-4 {
+
+    left: 280px;
+    bottom: 60px;
+
+    transform: rotate(8deg);
+
+    animation-delay: 1.5s;
+
+}
+
+
+.tulipan-5 {
+
+    left: 350px;
+    bottom: 20px;
+
+    transform: rotate(15deg);
+
+    animation-delay: 2s;
+
+}
+
+
+.tulipan-6 {
+
+    left: 175px;
+    bottom: 10px;
+
+    transform: rotate(-3deg);
+
+    animation-delay: 2.5s;
+
+}
+
+
+/* =========================================
+   FLOR DEL TULIPÁN
+========================================= */
+
+.flor-tulipan {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 75px;
+
+    height: 95px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #0755b7,
+            #37bfff,
+            #0b65cf
+        );
+
+    border-radius:
+        45% 45% 48% 48% /
+        65% 65% 35% 35%;
+
+    box-shadow:
+        inset 8px 0 8px rgba(255,255,255,.25),
+        inset -8px 0 8px rgba(0,0,100,.3),
+        0 0 18px rgba(55,191,255,.7);
+
+}
+
+
+/* PARTE SUPERIOR DEL TULIPÁN */
+
+.flor-tulipan::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -12px;
+
+    left: 5px;
+
+    width: 65px;
+
+    height: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b55b8,
+            #4bcaff,
+            #0b55b8
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            20% 0,
+            40% 60%,
+            55% 0,
+            75% 60%,
+            100% 0,
+            100% 100%
+        );
+
+}
+
+
+/* BRILLO */
+
+.flor-tulipan::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 18px;
+
+    width: 12px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.35);
+
+}
+
+
+/* =========================================
+   TALLOS
+========================================= */
+
+.tallo {
+
+    position: absolute;
+
+    top: 85px;
+
+    left: 47px;
+
+    width: 8px;
+
+    height: 210px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #075d28,
+            #37c95b,
+            #08752d
+        );
+
+}
+
+
+/* =========================================
+   HOJAS
+========================================= */
+
+.hoja {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #075d28,
+            #39c85b
+        );
+
+    border-radius:
+        100% 0 100% 0;
+
+}
+
+
+/* POSICIONES HOJAS */
+
+.hoja-1 {
+
+    left: 80px;
+
+    bottom: 50px;
+
+    transform: rotate(-30deg);
+
+}
+
+
+.hoja-2 {
+
+    left: 145px;
+
+    bottom: 30px;
+
+    transform: rotate(25deg);
+
+}
+
+
+.hoja-3 {
+
+    left: 260px;
+
+    bottom: 45px;
+
+    transform: rotate(-20deg);
+
+}
+
+
+.hoja-4 {
+
+    left: 330px;
+
+    bottom: 65px;
+
+    transform: rotate(30deg);
+
+}
+
+
+/* =========================================
+   MOVIMIENTO
+========================================= */
+
+@keyframes movimiento-tulipan {
+
+    0%, 100% {
+
+        margin-left: 0;
+
+    }
+
+    50% {
+
+        margin-left: 5px;
+
+    }
+
+}
+
+
+/* =========================================
+   MENSAJE
+========================================= */
+
+.mensaje-flores {
+
+    position: absolute;
+
+    z-index: 40;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    max-width: 500px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        rgba(0, 25, 65, .75);
+
+    border:
+        1px solid #4bcaff;
+
+    box-shadow:
+        0 0 20px rgba(40,180,255,.5);
+
+}
+
+
+.mensaje-flores .corazon {
+
+    font-size: 35px;
+
+}
+
+
+.mensaje-flores h2 {
+
+    margin: 3px;
+
+    color: #8edfff;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.mensaje-flores p {
+
+    margin: 5px;
+
+    font-size: 16px;
+
+}
+
+
+.decoracion {
+
+    margin-top: 8px;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .titulo-flores {
+
+        padding-top: 25px;
+
+    }
+
+
+    .titulo-flores h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .titulo-flores p {
+
+        font-size: 16px;
+
+    }
+
+
+    .ramo {
+
+        width: 360px;
+
+        height: 350px;
+
+        bottom: 80px;
+
+    }
+
+
+    .tulipan {
+
+        transform: scale(.75);
+
+    }
+
+
+    .tulipan-1 {
+        left: 0;
+    }
+
+    .tulipan-2 {
+        left: 60px;
+    }
+
+    .tulipan-3 {
+        left: 130px;
+    }
+
+    .tulipan-4 {
+        left: 200px;
+    }
+
+    .tulipan-5 {
+        left: 260px;
+    }
+
+    .tulipan-6 {
+        left: 105px;
+    }
+
+
+    .mensaje-flores {
+
+        bottom: 10px;
+
+        padding: 10px;
+
+    }
+
+}
